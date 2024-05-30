@@ -1,0 +1,205 @@
+ interface Rol {
+    // Métodos abstractos
+    public int getIdRol();
+    public String getNombreRol();
+    public int getIdPlataforma();
+}
+
+ class Roles implements Rol {
+    // Atributos
+    private int idRol;
+    private String nombreRol;
+    private int idPlataforma;
+
+    // Constructor
+    public Roles(int idRol, String nombreRol, int idPlataforma) {
+        this.idRol = idRol;
+        this.nombreRol = nombreRol;
+        this.idPlataforma = idPlataforma;
+    }
+
+    // Métodos que implementan la interfaz Rol
+    @Override
+    public int getIdRol() {
+        return idRol;
+    }
+
+    @Override
+    public String getNombreRol() {
+        return nombreRol;
+    }
+
+    @Override
+    public int getIdPlataforma() {
+        return idPlataforma;
+    }
+}
+
+class Niño implements Rol {
+    // Atributos
+    private int idEstudiante;
+    private String nombreEstudiante;
+    private int edad;
+    private String genero;
+    private int idPadreMadre;
+    private String nombrePadreMadre;
+    private int idRol;
+    private String nombreRol;
+    private int idPlataforma;
+
+    // Constructor
+    public Niño(int idEstudiante, String nombreEstudiante, int edad, String genero, int idPadreMadre, String nombrePadreMadre, int idRol, String nombreRol, int idPlataforma) {
+        this.idEstudiante = idEstudiante;
+        this.nombreEstudiante = nombreEstudiante;
+        this.edad = edad;
+        this.genero = genero;
+        this.idPadreMadre = idPadreMadre;
+        this.nombrePadreMadre = nombrePadreMadre;
+        this.idRol = idRol;
+        this.nombreRol = nombreRol;
+        this.idPlataforma = idPlataforma;
+    }
+
+    // Métodos que implementan la interfaz Rol
+    @Override
+    public int getIdRol() {
+        return idRol;
+    }
+
+    @Override
+    public String getNombreRol() {
+        return nombreRol;
+    }
+
+    @Override
+    public int getIdPlataforma() {
+        return idPlataforma;
+    }
+
+    // Métodos adicionales
+    public int getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
+
+    public String getNombreEstudiante() {
+        return nombreEstudiante;
+    }
+
+    public void setNombreEstudiante(String nombreEstudiante) {
+        this.nombreEstudiante = nombreEstudiante;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public int getIdPadreMadre() {
+        return idPadreMadre;
+    }
+
+    public void setIdPadreMadre(int idPadreMadre) {
+        this.idPadreMadre = idPadreMadre;
+    }
+
+    public String getNombrePadreMadre() {
+        return nombrePadreMadre;
+    }
+
+    public void setNombrePadreMadre(String nombrePadreMadre) {
+        this.nombrePadreMadre = nombrePadreMadre;
+    }
+}
+
+class Maestra implements Rol {
+    // Atributos
+    private int idRol;
+    private String nombreRol;
+    private int idPlataforma;
+    private String nombre;
+    private String apellido;
+    private String titulo;
+
+    // Constructor
+    public Maestra(int idRol, String nombreRol, int idPlataforma, String nombre, String apellido, String titulo) {
+        this.idRol = idRol;
+        this.nombreRol = nombreRol;
+        this.idPlataforma = idPlataforma;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.titulo = titulo;
+    }
+
+    // Métodos que implementan la interfaz Rol
+    @Override
+    public int getIdRol() {
+        return idRol;
+    }
+
+    @Override
+    public String getNombreRol() {
+        return nombreRol;
+    }
+
+    @Override
+    public int getIdPlataforma() {
+        return idPlataforma;
+    }
+
+    // Getters for private fields
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class Main {
+    public static void main(String[] args) {
+        // Objeto de la clase Niño
+        Niño niño = new Niño(1, "Juan", 10, "Masculino", 1, "María", 1, "Estudiante", 1);
+        System.out.println("Niño:");
+        System.out.println("ID Estudiante: " + niño.getIdEstudiante());
+        System.out.println("Nombre Estudiante: " + niño.getNombreEstudiante());
+        System.out.println("Edad: " + niño.getEdad());
+        System.out.println("Género: " + niño.getGenero());
+        System.out.println("ID Padre/Madre: " + niño.getIdPadreMadre());
+        System.out.println("Nombre Padre/Madre: " + niño.getNombrePadreMadre());
+        System.out.println("ID Rol: " + niño.getIdRol());
+        System.out.println("Nombre Rol: " + niño.getNombreRol());
+        System.out.println("ID Plataforma: " + niño.getIdPlataforma());
+
+        // Objeto de la clase Maestra
+        Maestra maestra = new Maestra(2, "Profesor", 1, "María", "González", "Licenciatura en Educación");
+        System.out.println("\nMaestra:");
+        System.out.println("ID Rol: " + maestra.getIdRol());
+        System.out.println("Nombre Rol: " + maestra.getNombreRol());
+        System.out.println("ID Plataforma: " + maestra.getIdPlataforma());
+        System.out.println("Nombre: " + maestra.getNombre());
+        System.out.println("Apellido: " + maestra.getApellido());
+        System.out.println("Título: " + maestra.getTitulo());
+    }
+}
